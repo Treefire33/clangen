@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--A collection of spritesheets-->
+<spritesheets>
+    <!--A collection of sprite groups corresponding to sprites 
+    and/or pelt related things-->
+    <spritesheet name="lineart">
+        <sprite-group name="lines"/>
+    </spritesheet>
+
+    <spritesheet name="lineartdead">
+        <sprite-group name="lineartdead" />
+    </spritesheet>
+
+    <spritesheet name="lineartdf">
+        <sprite-group name="lineartdf" />
+    </spritesheet>
+
+    <spritesheet-group id="eye_colours" name-convention="prefix">
+        <spritesheet-base id="eyes_sheet">
+            <sprite-group name="YELLOW">
+                <pelt-groups>
+                    <group>yellow_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="AMBER">
+                <pelt-groups>
+                    <group>yellow_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="HAZEL">
+                <pelt-groups>
+                    <group>green_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="PALEGREEN">
+                <pelt-groups>
+                    <group>green_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="GREEN">
+                <pelt-groups>
+                    <group>green_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="BLUE">
+                <pelt-groups>
+                    <group>blue_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="DARKBLUE">
+                <pelt-groups>
+                    <group>blue_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="GREY">
+                <pelt-groups>
+                    <group>blue_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="CYAN">
+                <pelt-groups>
+                    <group>blue_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="EMERALD">
+                <pelt-groups>
+                    <group>green_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="HEATHERBLUE">
+                <pelt-groups>
+                    <group>blue_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="SUNLITICE">
+                <pelt-groups>
+                    <group>blue_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="COPPER">
+                <pelt-groups>
+                    <group>yellow_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="SAGE">
+                <pelt-groups>
+                    <group>green_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="COBALT">
+                <pelt-groups>
+                    <group>blue_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="PALEBLUE">
+                <pelt-groups>
+                    <group>blue_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="BRONZE">
+                <pelt-groups>
+                    <group>yellow_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="SILVER">
+                <pelt-groups>
+                    <group>yellow_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="PALEYELLOW">
+                <pelt-groups>
+                    <group>yellow_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="GOLD">
+                <pelt-groups>
+                    <group>yellow_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="GREENYELLOW">
+                <pelt-groups>
+                    <group>yellow_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="ORANGE">
+                <pelt-groups>
+                    <group>yellow_eyes</group>
+                </pelt-groups>
+            </sprite-group>
+        </spritesheet-base>
+
+        <spritesheet name="eyes" />
+        <spritesheet name="eyes2" />
+    </spritesheet-group>
+
+    <spritesheet name="skin" name-convention="prefix">
+        <sprite-group name="BLACK"/>
+        <sprite-group name="RED"/>
+        <sprite-group name="PINK"/>
+        <sprite-group name="DARKBROWN"/>
+        <sprite-group name="BROWN"/>
+        <sprite-group name="LIGHTBROWN"/>
+        <sprite-group name="DARK"/>
+        <sprite-group name="DARKGREY"/>
+        <sprite-group name="GREY"/>
+        <sprite-group name="DARKSALMON"/>
+        <sprite-group name="SALMON"/>
+        <sprite-group name="PEACH"/>
+        <sprite-group name="DARKMARBLED"/>
+        <sprite-group name="MARBLED"/>
+        <sprite-group name="LIGHTMARBLED"/>
+        <sprite-group name="DARKBLUE"/>
+        <sprite-group name="BLUE"/>
+        <sprite-group name="LIGHTBLUE"/>
+    </spritesheet>
+
+    <spritesheet name="scars">
+        <sprite-group name="ONE" />
+        <sprite-group name="TWO" />
+        <sprite-group name="THREE" />
+        <sprite-group name="MANLEG" />
+        <sprite-group name="BRIGHTHEART" />
+        <sprite-group name="MANTAIL" />
+        <sprite-group name="BRIDGE" />
+        <sprite-group name="RIGHTBLIND" />
+        <sprite-group name="LEFTBLIND" />
+        <sprite-group name="BOTHBLIND" />
+        <sprite-group name="BURNPAWS" />
+        <sprite-group name="BURNTAIL" />
+
+        <sprite-group name="BURNBELLY" />
+        <sprite-group name="BEAKCHEEK" />
+        <sprite-group name="BEAKLOWER" />
+        <sprite-group name="BURNRUMP" />
+        <sprite-group name="CATBITE" />
+        <sprite-group name="RATBITE" />
+        <sprite-group name="FROSTFACE" />
+        <sprite-group name="FROSTTAIL" />
+        <sprite-group name="FROSTMITT" />
+        <sprite-group name="FROSTSOCK" />
+        <sprite-group name="QUILLCHUNK" />
+        <sprite-group name="QUILLSCRATCH" />
+
+        <sprite-group name="TAILSCAR" />
+        <sprite-group name="SNOUT" />
+        <sprite-group name="CHEEK" />
+        <sprite-group name="SIDE" />
+        <sprite-group name="THROAT" />
+        <sprite-group name="TAILBASE" />
+        <sprite-group name="BELLY" />
+        <sprite-group name="TOETRAP" />
+        <sprite-group name="SNAKE" />
+        <sprite-group name="LEGBITE" />
+        <sprite-group name="NECKBITE" />
+        <sprite-group name="FACE" />
+
+        <sprite-group name="HINDLEG" />
+        <sprite-group name="BACK" />
+        <sprite-group name="QUILLSIDE" />
+        <sprite-group name="SCRATCHSIDE" />
+        <sprite-group name="TOE" />
+        <sprite-group name="BEAKSIDE" />
+        <sprite-group name="CATBITETWO" />
+        <sprite-group name="SNAKETWO" />
+        <sprite-group name="FOUR" />
+    </spritesheet>
+
+    <spritesheet name="missingscars">
+        <sprite-group name="LEFTEAR" />
+        <sprite-group name="RIGHTEAR" />
+        <sprite-group name="NOTAIL" />
+        <sprite-group name="NOLEFTEAR" />
+        <sprite-group name="NORIGHTEAR" />
+        <sprite-group name="NOEAR" />
+        <sprite-group name="HALFTAIL" />
+        <sprite-group name="NOPAW" />
+    </spritesheet>
+
+    <spritesheet name="medcatherbs" name-convention="prefix" prefix="acc_herbs">
+        <sprite-group name="MAPLE LEAF" />
+        <sprite-group name="HOLLY" />
+        <sprite-group name="BLUE BERRIES" />
+        <sprite-group name="FORGET ME NOTS" />
+        <sprite-group name="RYE STALK" />
+        <sprite-group name="CATTAIL" />
+        <sprite-group name="POPPY" />
+        <sprite-group name="ORANGE POPPY" />
+        <sprite-group name="CYAN POPPY" />
+        <sprite-group name="WHITE POPPY" />
+        <sprite-group name="PINK POPPY" />
+
+        <sprite-group name="BLUEBELLS" />
+        <sprite-group name="LILY OF THE VALLEY" />
+        <sprite-group name="SNAPDRAGON" />
+        <sprite-group name="HERBS" />
+        <sprite-group name="PETALS" />
+        <sprite-group name="NETTLE" />
+        <sprite-group name="HEATHER" />
+        <sprite-group name="GORSE" />
+        <sprite-group name="JUNIPER" />
+        <sprite-group name="RASPBERRY" />
+        <sprite-group name="LAVENDER" />
+
+        <sprite-group name="OAK LEAVES" />
+        <sprite-group name="CATMINT" />
+        <sprite-group name="MAPLE SEED" />
+        <sprite-group name="LAUREL" />
+        <sprite-group name="BULB WHITE" />
+        <sprite-group name="BULB YELLOW" />
+        <sprite-group name="BULB ORANGE" />
+        <sprite-group name="BULB PINK" />
+        <sprite-group name="BULB BLUE" />
+        <sprite-group name="CLOVER" />
+        <sprite-group name="DAISY" />
+
+        <sprite-group name="DRY HERBS" />
+        <sprite-group name="DRY CATMINT" />
+        <sprite-group name="DRY NETTLES" />
+        <sprite-group name="DRY LAURELS" />
+    </spritesheet>
+
+    <spritesheet name="wild" name-convention="prefix" prefix="acc_wild">
+        <sprite-group name="RED FEATHERS" />
+        <sprite-group name="BLUE FEATHERS" />
+        <sprite-group name="JAY FEATHERS" />
+        <sprite-group name="GULL FEATHERS" />
+        <sprite-group name="SPARROW FEATHERS" />
+        <sprite-group name="MOTH WINGS" />
+        <sprite-group name="ROSY MOTH WINGS" />
+        <sprite-group name="MORPHO BUTTERFLY" />
+        <sprite-group name="MONARCH BUTTERFLY" />
+        <sprite-group name="CICADA WINGS" />
+        <sprite-group name="BLACK CICADA" />
+    </spritesheet>
+
+    <spritesheet name="collars" name-convention="prefix" prefix="collars">
+        <sprite-group name="CRIMSON" />
+        <sprite-group name="BLUE" />
+        <sprite-group name="YELLOW" />
+        <sprite-group name="CYAN" />
+        <sprite-group name="RED" />
+        <sprite-group name="LIME" />
+        <sprite-group name="GREEN" />
+        <sprite-group name="RAINBOW" />
+        <sprite-group name="BLACK" />
+        <sprite-group name="SPIKES" />
+        <sprite-group name="WHITE" />
+        <sprite-group name="PINK" />
+        <sprite-group name="PURPLE" />
+        <sprite-group name="MULTI" />
+        <sprite-group name="INDIGO" />
+    </spritesheet>
+
+    <spritesheet name="bellcollars" name-convention="prefix" prefix="collars">
+        <sprite-group name="CRIMSONBELL" />
+        <sprite-group name="BLUEBELL" />
+        <sprite-group name="YELLOWBELL" />
+        <sprite-group name="CYANBELL" />
+        <sprite-group name="REDBELL" />
+        <sprite-group name="LIMEBELL" />
+        <sprite-group name="GREENBELL" />
+        <sprite-group name="RAINBOWBELL" />
+        <sprite-group name="BLACKBELL" />
+        <sprite-group name="SPIKESBELL" />
+        <sprite-group name="WHITEBELL" />
+        <sprite-group name="PINKBELL" />
+        <sprite-group name="PURPLEBELL" />
+        <sprite-group name="MULTIBELL" />
+        <sprite-group name="INDIGOBELL" />
+    </spritesheet>
+
+    <spritesheet name="bowcollars" name-convention="prefix" prefix="collars">
+        <sprite-group name="CRIMSONBOW" />
+        <sprite-group name="BLUEBOW" />
+        <sprite-group name="YELLOWBOW" />
+        <sprite-group name="CYANBOW" />
+        <sprite-group name="REDBOW" />
+        <sprite-group name="LIMEBOW" />
+        <sprite-group name="GREENBOW" />
+        <sprite-group name="RAINBOWBOW" />
+        <sprite-group name="BLACKBOW" />
+        <sprite-group name="SPIKESBOW" />
+        <sprite-group name="WHITEBOW" />
+        <sprite-group name="PINKBOW" />
+        <sprite-group name="PURPLEBOW" />
+        <sprite-group name="MULTIBOW" />
+        <sprite-group name="INDIGOBOW" />
+    </spritesheet>
+
+    <spritesheet name="nyloncollars" name-convention="prefix" prefix="collars">
+        <sprite-group name="CRIMSONNYLON" />
+        <sprite-group name="BLUENYLON" />
+        <sprite-group name="YELLOWNYLON" />
+        <sprite-group name="CYANNYLON" />
+        <sprite-group name="REDNYLON" />
+        <sprite-group name="LIMENYLON" />
+        <sprite-group name="GREENNYLON" />
+        <sprite-group name="RAINNYLONNYLON" />
+        <sprite-group name="BLACKNYLON" />
+        <sprite-group name="SPIKESNYLON" />
+        <sprite-group name="WHITENYLON" />
+        <sprite-group name="PINKNYLON" />
+        <sprite-group name="PURPLENYLON" />
+        <sprite-group name="MULTINYLON" />
+        <sprite-group name="INDIGONYLON" />
+    </spritesheet>
+
+    <!--A collection of spritesheets that share the same "base"; 
+    same col and row count, same layout, etc., but different colours, etc.-->
+    <spritesheet-group id="colours" name-convention="prefix_colours">
+        <spritesheet-base id="colours_sheet"> 
+            <sprite-group name="WHITE">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>white_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="PALEGREY">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>white_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="SILVER">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>white_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="GREY">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>black_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="DARKGREY">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>black_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="GHOST">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>black_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="BLACK">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>black_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="CREAM" start-coord="0 1">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>ginger_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="PALEGINGER">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>ginger_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="GOLDEN">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>ginger_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="GINGER">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>ginger_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="DARKGINGER">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>ginger_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="SIENNA">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>ginger_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="LIGHTBROWN" start-coord="0 1">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>brown_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="LILAC">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>brown_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="BROWN">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>brown_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="GOLDEN-BROWN">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>brown_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="DARKBROWN">
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>brown_colours</group>
+                </pelt-groups>
+            </sprite-group>
+            <sprite-group name="CHOCOLATE" >
+                <pelt-groups>
+                    <group>pelt_colours</group>
+                    <group>brown_colours</group>
+                </pelt-groups>
+            </sprite-group>
+        </spritesheet-base>
+
+        <spritesheet name="singlecolours" />
+        <spritesheet name="tabbycolours" />
+        <spritesheet name="marbledcolours" />
+        <spritesheet name="rosettecolours" />
+        <spritesheet name="smokecolours" />
+        <spritesheet name="tickedcolours" />
+        <spritesheet name="speckledcolours" />
+        <spritesheet name="bengalcolours" />
+        <spritesheet name="mackerelcolours" />
+        <spritesheet name="classiccolours" />
+        <spritesheet name="sokokecolours" />
+        <spritesheet name="agouticolours" />
+        <spritesheet name="singlestripecolours" />
+        <spritesheet name="maskedcolours" />
+    </spritesheet-group>
+
+    <spritesheet name="shadersnewwhite">
+        <sprite-group name="shaders" />
+    </spritesheet>
+
+    <spritesheet name="lightingnew">
+        <sprite-group name="lighting" />
+    </spritesheet>
+
+    <spritesheet name="whitepatches" name-convention="prefix" prefix="white">
+        <sprite-group name="FULLWHITE"/>
+        <sprite-group name="ANY" />
+        <sprite-group name="TUXEDO" />
+        <sprite-group name="LITTLE" />
+        <sprite-group name="COLOURPOINT" />
+        <sprite-group name="VAN" />
+        <sprite-group name="ANYTWO" />
+        <sprite-group name="MOON" />
+        <sprite-group name="PHANTOM" />
+        <sprite-group name="POWDER" />
+        <sprite-group name="BLEACHED" />
+        <sprite-group name="SAVANNAH" />
+        <sprite-group name="FADESPOTS" />
+        <sprite-group name="PEBBLESHINE" />
+
+        <sprite-group name="EXTRA" />
+        <sprite-group name="ONEEAR" />
+        <sprite-group name="BROKEN" />
+        <sprite-group name="LIGHTTUXEDO"  />
+        <sprite-group name="BUZZARDFANG" />
+        <sprite-group name="RAGDOLL" />
+        <sprite-group name="LIGHTSONG" />
+        <sprite-group name="VITILIGO" />
+        <sprite-group name="BLACKSTAR" />
+        <sprite-group name="PIEBALD" />
+        <sprite-group name="CURVED" />
+        <sprite-group name="PETAL" />
+        <sprite-group name="SHIBAINU" />
+        <sprite-group name="OWL" />
+
+        <sprite-group name="TIP" />
+        <sprite-group name="FANCY" />
+        <sprite-group name="FRECKLES" />
+        <sprite-group name="RINGTAIL" />
+        <sprite-group name="HALFFACE" />
+        <sprite-group name="PANTSTWO" />
+        <sprite-group name="GOATEE" />
+        <sprite-group name="VITILIGOTWO" />
+        <sprite-group name="PAWS" />
+        <sprite-group name="MITAINE" />
+        <sprite-group name="BROKENBLAZE" />
+        <sprite-group name="SCOURGE" />
+        <sprite-group name="DIVA" />
+        <sprite-group name="BEARD" />
+        
+        <sprite-group name="TAIL" />
+        <sprite-group name="BLAZE" />
+        <sprite-group name="PRINCE" />
+        <sprite-group name="BIB" />
+        <sprite-group name="VEE" />
+        <sprite-group name="UNDERS" />
+        <sprite-group name="HONEY" />
+        <sprite-group name="FAROFA" />
+        <sprite-group name="DAMIEN" />
+        <sprite-group name="MISTER" />
+        <sprite-group name="BELLY" />
+        <sprite-group name="TAILTIP" />
+        <sprite-group name="TOES" />
+        <sprite-group name="TOPCOVER" />
+
+        <sprite-group name="APRON" />
+        <sprite-group name="CAPSADDLE" />
+        <sprite-group name="MASKMANTLE" />
+        <sprite-group name="SQUEAKS" />
+        <sprite-group name="STAR" />
+        <sprite-group name="TOESTAIL" />
+        <sprite-group name="RAVENPAW" />
+        <sprite-group name="PANTS" />
+        <sprite-group name="REVERSEPANTS" />
+        <sprite-group name="SKUNK" />
+        <sprite-group name="KARPATI" />
+        <sprite-group name="HALFWHITE" />
+        <sprite-group name="APPALOOSA" />
+        <sprite-group name="DAPPLEPAW" />
+
+        <sprite-group name="HEART" />
+        <sprite-group name="LILTWO" />
+        <sprite-group name="GLASS" />
+        <sprite-group name="MOORISH" />
+        <sprite-group name="SEPIAPOINT" />
+        <sprite-group name="MINKPOINT" />
+        <sprite-group name="SEALPOINT" />
+        <sprite-group name="MAO" />
+        <sprite-group name="LUNA" />
+        <sprite-group name="CHESTSPECK" />
+        <sprite-group name="WINGS"/>
+        <sprite-group name="PAINTED" />
+        <sprite-group name="HEARTTWO" />
+        <sprite-group name="WOODPECKER" />
+
+        <sprite-group name="BOOTS" />
+        <sprite-group name="MISS" />
+        <sprite-group name="COW" />
+        <sprite-group name="COWTWO" />
+        <sprite-group name="BUB" />
+        <sprite-group name="BOWTIE" />
+        <sprite-group name="MUSTACHE" />
+        <sprite-group name="REVERSEHEART" />
+        <sprite-group name="SPARROW" />
+        <sprite-group name="VEST" />
+        <sprite-group name="LOVEBUG" />
+        <sprite-group name="TRIXIE" />
+        <sprite-group name="SAMMY" />
+        <sprite-group name="SPARKLE" />
+
+        <sprite-group name="RIGHTEAR" />
+        <sprite-group name="LEFTEAR" />
+        <sprite-group name="ESTRELLA" />
+        <sprite-group name="SHOOTINGSTAR" />
+        <sprite-group name="EYESPOT" />
+        <sprite-group name="REVERSEEYE" />
+        <sprite-group name="FADEBELLY" />
+        <sprite-group name="FRONT" />
+        <sprite-group name="BLOSSOMSTEP" />
+        <sprite-group name="PEBBLE" />
+        <sprite-group name="TAILTWO" />
+        <sprite-group name="BUDDY" />
+        <sprite-group name="BACKSPOT" />
+        <sprite-group name="EYEBAGS" />
+
+        <sprite-group name="BULLSEYE" />
+        <sprite-group name="FINN" />
+        <sprite-group name="DIGIT" />
+        <sprite-group name="KROPKA" />
+        <sprite-group name="FCTWO" />
+        <sprite-group name="FCONE" />
+        <sprite-group name="MIA" />
+        <sprite-group name="SCAR" />
+        <sprite-group name="BUSTER" />
+        <sprite-group name="SMOKEY" />
+        <sprite-group name="HAWKBLAZE" />
+        <sprite-group name="CAKE" />
+        <sprite-group name="ROSINA" />
+        <sprite-group name="PRINCESS" />
+
+        <sprite-group name="LOCKET" />
+        <sprite-group name="BLAZEMASK" />
+        <sprite-group name="TEARS" />
+        <sprite-group name="DOUGIE" />
+    </spritesheet>
+
+    <spritesheet name="tortiepatchesmasks" name-convention="prefix" prefix="tortiemask">
+        <sprite-group name="ONE" />
+        <sprite-group name="TWO" />
+        <sprite-group name="THREE" />
+        <sprite-group name="FOUR" />
+        <sprite-group name="REDTAIL" />
+        <sprite-group name="DELILAH" />
+        <sprite-group name="HALF" />
+        <sprite-group name="STREAK" />
+        <sprite-group name="MASK" />
+        <sprite-group name="SMOKE" />
+
+        <sprite-group name="MINIMALONE" />
+        <sprite-group name="MINIMALTWO" />
+        <sprite-group name="MINIMALTHREE" />
+        <sprite-group name="MINIMALFOUR" />
+        <sprite-group name="OREO" />
+        <sprite-group name="SWOOP" />
+        <sprite-group name="CHIMERA" />
+        <sprite-group name="CHEST" />
+        <sprite-group name="ARMTAIL" />
+        <sprite-group name="GRUMPYFACE" />
+
+        <sprite-group name="MOTTLED" />
+        <sprite-group name="SIDEMASK" />
+        <sprite-group name="EYEDOT" />
+        <sprite-group name="BANDANA" />
+        <sprite-group name="PACMAN" />
+        <sprite-group name="STREAMSTRIKE" />
+        <sprite-group name="SMUDGED" />
+        <sprite-group name="DAUB" />
+        <sprite-group name="EMBER" />
+        <sprite-group name="BRIE" />
+
+        <sprite-group name="ORIOLE" />
+        <sprite-group name="ROBIN" />
+        <sprite-group name="BRINDLE" />
+        <sprite-group name="PAIGE" />
+        <sprite-group name="ROSETAIL" />
+        <sprite-group name="SAFI" />
+        <sprite-group name="DAPPLENIGHT" />
+        <sprite-group name="BLANKET" />
+        <sprite-group name="BELOVED" />
+        <sprite-group name="BODY" />
+
+        <sprite-group name="SHILOH" />
+        <sprite-group name="FRECKLED" />
+        <sprite-group name="HEARTBEAT" />
+    </spritesheet>
+
+    <spritesheet name="fademask">
+        <sprite-group name="fademask" />
+    </spritesheet>
+
+    <spritesheet name="fadestarclan">
+        <sprite-group name="fadestarclan" />
+    </spritesheet>
+
+    <spritesheet name="fadedarkforest">
+        <sprite-group name="fadedf" />
+    </spritesheet>
+
+    <spritesheet name="symbols" />
+</spritesheets>

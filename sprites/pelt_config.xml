@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pelt-config>
+    <group id="pelt_colours">
+        <entry>WHITE</entry>
+        <entry>PALEGREY</entry>
+        <entry>SILVER</entry>
+        <entry>GREY</entry>
+        <entry>DARKGREY</entry>
+        <entry>GHOST</entry>
+        <entry>BLACK</entry>
+        <entry>CREAM</entry>
+        <entry>PALEGINGER</entry>
+        <entry>GOLDEN</entry>
+        <entry>GINGER</entry>
+        <entry>DARKGINGER</entry>
+        <entry>SIENNA</entry>
+        <entry>LIGHTBROWN</entry>
+        <entry>LILAC</entry>
+        <entry>BROWN</entry>
+        <entry>GOLDEN-BROWN</entry>
+        <entry>DARKBROWN</entry>
+        <entry>CHOCOLATE</entry>
+    </group>
+
+    <group id="tortiepatterns">
+        <entry>ONE</entry>
+        <entry>TWO</entry>
+        <entry>THREE</entry>
+        <entry>FOUR</entry>
+        <entry>REDTAIL</entry>
+        <entry>DELILAH</entry>
+        <entry>MINIMALONE</entry>
+        <entry>MINIMALTWO</entry>
+        <entry>MINIMALTHREE</entry>
+        <entry>MINIMALFOUR</entry>
+        <entry>HALF</entry>
+        <entry>OREO</entry>
+        <entry>SWOOP</entry>
+        <entry>MOTTLED</entry>
+        <entry>SIDEMASK</entry>
+        <entry>EYEDOT</entry>
+        <entry>BANDANA</entry>
+        <entry>PACMAN</entry>
+        <entry>STREAMSTRIKE</entry>
+        <entry>ORIOLE</entry>
+        <entry>CHIMERA</entry>
+        <entry>DAUB</entry>
+        <entry>EMBER</entry>
+        <entry>BLANKET</entry>
+        <entry>ROBIN</entry>
+        <entry>BRINDLE</entry>
+        <entry>PAIGE</entry>
+        <entry>ROSETAIL</entry>
+        <entry>SAFI</entry>
+        <entry>SMUDGED</entry>
+        <entry>DAPPLENIGHT</entry>
+        <entry>STREAK</entry>
+        <entry>MASK</entry>
+        <entry>CHEST</entry>
+        <entry>ARMTAIL</entry>
+        <entry>SMOKE</entry>
+        <entry>GRUMPYFACE</entry>
+        <entry>BRIE</entry>
+        <entry>BELOVED</entry>
+        <entry>BODY</entry>
+        <entry>SHILOH</entry>
+        <entry>FRECKLED</entry>
+        <entry>HEARTBEAT</entry>
+    </group>
+
+    <group id="tortiebases">
+        <entry>single</entry>
+        <entry>tabby</entry>
+        <entry>bengal</entry>
+        <entry>marbled</entry>
+        <entry>ticked</entry>
+        <entry>smoke</entry>
+        <entry>rosette</entry>
+        <entry>speckled</entry>
+        <entry>mackerel</entry>
+        <entry>classic</entry>
+        <entry>sokoke</entry>
+        <entry>agouti</entry>
+        <entry>singlestripe</entry>
+        <entry>masked</entry>
+    </group>
+
+    <group id="yellow_eyes">
+        <entry>YELLOW</entry>
+        <entry>AMBER</entry>
+        <entry>PALEYELLOW</entry>
+        <entry>GOLD</entry>
+        <entry>COPPER</entry>
+        <entry>GREENYELLOW</entry>
+        <entry>BRONZE</entry>
+        <entry>SILVER</entry>
+        <entry>ORANGE</entry>
+    </group>
+
+    <group id="blue_eyes">
+        <entry>BLUE</entry>
+        <entry>DARKBLUE</entry>
+        <entry>CYAN</entry>
+        <entry>PALEBLUE</entry>
+        <entry>HEATHERBLUE</entry>
+        <entry>COBALT</entry>
+        <entry>SUNLITICE</entry>
+        <entry>GREY</entry>
+    </group>
+
+    <group id="green_eyes">
+        <entry>PALEGREEN</entry>
+        <entry>GREEN</entry>
+        <entry>EMERALD</entry> 
+        <entry>SAGE</entry>
+        <entry>HAZEL</entry>
+    </group>
+
+    <group id="scars1">
+        <entry>ONE</entry>
+        <entry>TWO</entry>
+        <entry>THREE</entry>
+        <entry>TAILSCAR</entry>
+        <entry>SNOUT</entry>
+        <entry>CHEEK</entry>
+        <entry>SIDE</entry>
+        <entry>THROAT</entry>
+        <entry>TAILBASE</entry>
+        <entry>BELLY</entry>
+        <entry>LEGBITE</entry>
+        <entry>NECKBITE</entry>
+        <entry>FACE</entry>
+        <entry>MANLEG</entry>
+        <entry>BRIGHTHEART</entry>
+        <entry>MANTAIL</entry>
+        <entry>BRIDGE</entry>
+        <entry>RIGHTBLIND</entry>
+        <entry>LEFTBLIND</entry>
+        <entry>BOTHBLIND</entry>
+        <entry>BEAKCHEEK</entry>
+        <entry>BEAKLOWER</entry>
+        <entry>CATBITE</entry>
+        <entry>RATBITE</entry>
+        <entry>QUILLCHUNK</entry>
+        <entry>QUILLSCRATCH</entry>
+        <entry>HINDLEG</entry>
+        <entry>BACK</entry>
+        <entry>QUILLSIDE</entry>
+        <entry>SCRATCHSIDE</entry>
+        <entry>BEAKSIDE</entry>
+        <entry>CATBITETWO</entry>
+        <entry>FOUR</entry>
+    </group>
+
+    <group id="scars2">
+        <entry>LEFTEAR</entry>
+        <entry>RIGHTEAR</entry>
+        <entry>NOTAIL</entry>
+        <entry>HALFTAIL</entry>
+        <entry>NOPAW</entry>
+        <entry>NOLEFTEAR</entry>
+        <entry>NORIGHTEAR</entry>
+        <entry>NOEAR</entry>
+    </group>
+
+    <group id="scars3">
+        <entry>SNAKE</entry>
+        <entry>TOETRAP</entry>
+        <entry>BURNPAWS</entry>
+        <entry>BURNTAIL</entry>
+        <entry>BURNBELLY</entry>
+        <entry>BURNRUMP</entry>
+        <entry>FROSTFACE</entry>
+        <entry>FROSTTAIL</entry>
+        <entry>FROSTMITT</entry>
+        <entry>FROSTSOCK</entry>
+        <entry>TOE</entry>
+        <entry>SNAKETWO</entry>
+    </group>
+
+    <group id="plant_accessories">
+        <entry>MAPLE LEAF</entry>
+        <entry>HOLLY</entry>
+        <entry>BLUE BERRIES</entry>
+        <entry>FORGET ME NOTS</entry>
+        <entry>RYE STALK</entry>
+        <entry>CATTAIL</entry>
+        <entry>POPPY</entry>
+        <entry>ORANGE POPPY</entry>
+        <entry>CYAN POPPY</entry>
+        <entry>WHITE POPPY</entry>
+        <entry>PINK POPPY</entry>
+        <entry>BLUEBELLS</entry>
+        <entry>LILY OF THE VALLEY</entry>
+        <entry>SNAPDRAGON</entry>
+        <entry>HERBS</entry>
+        <entry>PETALS</entry>
+        <entry>NETTLE</entry>
+        <entry>HEATHER</entry>
+        <entry>GORSE</entry>
+        <entry>JUNIPER</entry>
+        <entry>RASPBERRY</entry>
+        <entry>LAVENDER</entry>
+        <entry>OAK LEAVES</entry>
+        <entry>CATMINT</entry>
+        <entry>MAPLE SEED</entry>
+        <entry>LAUREL</entry>
+        <entry>BULB WHITE</entry>
+        <entry>BULB YELLOW</entry>
+        <entry>BULB ORANGE</entry>
+        <entry>BULB PINK</entry>
+        <entry>BULB BLUE</entry>
+        <entry>CLOVER</entry>
+        <entry>DAISY</entry>
+        <entry>DRY HERBS</entry>
+        <entry>DRY CATMINT</entry>
+        <entry>DRY NETTLES</entry>
+        <entry>DRY LAURELS</entry>
+    </group>
+
+    <group id="wild_accessories">
+        <entry>RED FEATHERS</entry>
+        <entry>BLUE FEATHERS</entry>
+        <entry>JAY FEATHERS</entry>
+        <entry>GULL FEATHERS</entry>
+        <entry>SPARROW FEATHERS</entry>
+        <entry>MOTH WINGS</entry>
+        <entry>ROSY MOTH WINGS</entry>
+        <entry>MORPHO BUTTERFLY</entry>
+        <entry>MONARCH BUTTERFLY</entry>
+        <entry>CICADA WINGS</entry>
+        <entry>BLACK CICADA</entry>
+    </group>
+
+    <group id="tail_accessories">
+        <entry>RED FEATHERS</entry>
+        <entry>BLUE FEATHERS</entry>
+        <entry>JAY FEATHERS</entry>
+        <entry>GULL FEATHERS</entry>
+        <entry>SPARROW FEATHERS</entry>
+        <entry>CLOVER</entry>
+        <entry>DAISY</entry>
+    </group>
+
+    <group id="collars">
+        <entry>CRIMSON</entry>
+        <entry>BLUE</entry>
+        <entry>YELLOW</entry>
+        <entry>CYAN</entry>
+        <entry>RED</entry>
+        <entry>LIME</entry>
+        <entry>GREEN</entry>
+        <entry>RAINBOW</entry>
+        <entry>BLACK</entry>
+        <entry>SPIKES</entry>
+        <entry>WHITE</entry>
+        <entry>PINK</entry>
+        <entry>PURPLE</entry>
+        <entry>MULTI</entry>
+        <entry>INDIGO</entry>
+        <entry>CRIMSONBELL</entry>
+        <entry>BLUEBELL</entry>
+        <entry>YELLOWBELL</entry>
+        <entry>CYANBELL</entry>
+        <entry>REDBELL</entry>
+        <entry>LIMEBELL</entry>
+        <entry>GREENBELL</entry>
+        <entry>RAINBOWBELL</entry>
+        <entry>BLACKBELL</entry>
+        <entry>SPIKESBELL</entry>
+        <entry>WHITEBELL</entry>
+        <entry>PINKBELL</entry>
+        <entry>PURPLEBELL</entry>
+        <entry>MULTIBELL</entry>
+        <entry>INDIGOBELL</entry>
+        <entry>CRIMSONBOW</entry>
+        <entry>BLUEBOW</entry>
+        <entry>YELLOWBOW</entry>
+        <entry>CYANBOW</entry>
+        <entry>REDBOW</entry>
+        <entry>LIMEBOW</entry>
+        <entry>GREENBOW</entry>
+        <entry>RAINBOWBOW</entry>
+        <entry>BLACKBOW</entry>
+        <entry>SPIKESBOW</entry>
+        <entry>WHITEBOW</entry>
+        <entry>PINKBOW</entry>
+        <entry>PURPLEBOW</entry>
+        <entry>MULTIBOW</entry>
+        <entry>INDIGOBOW</entry>
+        <entry>CRIMSONNYLON</entry>
+        <entry>BLUENYLON</entry>
+        <entry>YELLOWNYLON</entry>
+        <entry>CYANNYLON</entry>
+        <entry>REDNYLON</entry>
+        <entry>LIMENYLON</entry>
+        <entry>GREENNYLON</entry>
+        <entry>RAINBOWNYLON</entry>
+        <entry>BLACKNYLON</entry>
+        <entry>SPIKESNYLON</entry>
+        <entry>WHITENYLON</entry>
+        <entry>PINKNYLON</entry>
+        <entry>PURPLENYLON</entry>
+        <entry>MULTINYLON</entry>
+        <entry>INDIGONYLON</entry>
+    </group>
+
+    <group id="head_accessories">
+        <entry>MOTH WINGS</entry>
+        <entry>ROSY MOTH WINGS</entry>
+        <entry>MORPHO BUTTERFLY</entry>
+        <entry>MONARCH BUTTERFLY</entry>
+        <entry>CICADA WINGS</entry>
+        <entry>BLACK CICADA</entry>
+        <entry>MAPLE LEAF</entry>
+        <entry>HOLLY</entry>
+        <entry>BLUE BERRIES</entry>
+        <entry>FORGET ME NOTS</entry>
+        <entry>RYE STALK</entry>
+        <entry>CATTAIL</entry>
+        <entry>POPPY</entry>
+        <entry>ORANGE POPPY</entry>
+        <entry>CYAN POPPY</entry>
+        <entry>WHITE POPPY</entry>
+        <entry>PINK POPPY</entry>
+        <entry>BLUEBELLS</entry>
+        <entry>LILY OF THE VALLEY</entry>
+        <entry>SNAPDRAGON</entry>
+        <entry>NETTLE</entry>
+        <entry>HEATHER</entry>
+        <entry>GORSE</entry>
+        <entry>JUNIPER</entry>
+        <entry>RASPBERRY</entry>
+        <entry>LAVENDER</entry>
+        <entry>OAK LEAVES</entry>
+        <entry>CATMINT</entry>
+        <entry>MAPLE SEED</entry>
+        <entry>LAUREL</entry>
+        <entry>BULB WHITE</entry>
+        <entry>BULB YELLOW</entry>
+        <entry>BULB ORANGE</entry>
+        <entry>BULB PINK</entry>
+        <entry>BULB BLUE</entry>
+        <entry>DRY CATMINT</entry>
+        <entry>DRY NETTLES</entry>
+        <entry>DRY LAURELS</entry>
+    </group>
+
+    <group id="body_accessories">
+        <entry>HERBS</entry>
+        <entry>PETALS</entry>
+        <entry>DRY HERBS</entry>
+    </group>
+
+    <group id="little_white">
+        <entry>LITTLE</entry>
+        <entry>LIGHTTUXEDO</entry>
+        <entry>BUZZARDFANG</entry>
+        <entry>TIP</entry>
+        <entry>BLAZE</entry>
+        <entry>BIB</entry>
+        <entry>VEE</entry>
+        <entry>PAWS</entry>
+        <entry>BELLY</entry>
+        <entry>TAILTIP</entry>
+        <entry>TOES</entry>
+        <entry>BROKENBLAZE</entry>
+        <entry>LILTWO</entry>
+        <entry>SCOURGE</entry>
+        <entry>TOESTAIL</entry>
+        <entry>RAVENPAW</entry>
+        <entry>HONEY</entry>
+        <entry>LUNA</entry>
+        <entry>EXTRA</entry>
+        <entry>MUSTACHE</entry>
+        <entry>REVERSEHEART</entry>
+        <entry>SPARKLE</entry>
+        <entry>RIGHTEAR</entry>
+        <entry>LEFTEAR</entry>
+        <entry>ESTRELLA</entry>
+        <entry>REVERSEEYE</entry>
+        <entry>BACKSPOT</entry>
+        <entry>EYEBAGS</entry>
+        <entry>LOCKET</entry>
+        <entry>BLAZEMASK</entry>
+        <entry>TEARS</entry>
+    </group>
+
+    <group id="mid_white">
+        <entry>TUXEDO</entry>
+        <entry>FANCY</entry>
+        <entry>UNDERS</entry>
+        <entry>DAMIEN</entry>
+        <entry>SKUNK</entry>
+        <entry>MITAINE</entry>
+        <entry>SQUEAKS</entry>
+        <entry>STAR</entry>
+        <entry>WINGS</entry>
+        <entry>DIVA</entry>
+        <entry>SAVANNAH</entry>
+        <entry>FADESPOTS</entry>
+        <entry>BEARD</entry>
+        <entry>DAPPLEPAW</entry>
+        <entry>TOPCOVER</entry>
+        <entry>WOODPECKER</entry>
+        <entry>MISS</entry>
+        <entry>BOWTIE</entry>
+        <entry>VEST</entry>
+        <entry>FADEBELLY</entry>
+        <entry>DIGIT</entry>
+        <entry>FCTWO</entry>
+        <entry>FCONE</entry>
+        <entry>MIA</entry>
+        <entry>ROSINA</entry>
+        <entry>PRINCESS</entry>
+        <entry>DOUGIE</entry>
+    </group>
+
+    <group id="high_white">
+        <entry>ANY</entry>
+        <entry>ANYTWO</entry>
+        <entry>BROKEN</entry>
+        <entry>FRECKLES</entry>
+        <entry>RINGTAIL</entry>
+        <entry>HALFFACE</entry>
+        <entry>PANTSTWO</entry>
+        <entry>GOATEE</entry>
+        <entry>PRINCE</entry>
+        <entry>FAROFA</entry>
+        <entry>MISTER</entry>
+        <entry>PANTS</entry>
+        <entry>REVERSEPANTS</entry>
+        <entry>HALFWHITE</entry>
+        <entry>APPALOOSA</entry>
+        <entry>PIEBALD</entry>
+        <entry>CURVED</entry>
+        <entry>GLASS</entry>
+        <entry>MASKMANTLE</entry>
+        <entry>MAO</entry>
+        <entry>PAINTED</entry>
+        <entry>SHIBAINU</entry>
+        <entry>OWL</entry>
+        <entry>BUB</entry>
+        <entry>SPARROW</entry>
+        <entry>TRIXIE</entry>
+        <entry>SAMMY</entry>
+        <entry>FRONT</entry>
+        <entry>BLOSSOMSTEP</entry>
+        <entry>BULLSEYE</entry>
+        <entry>FINN</entry>
+        <entry>SCAR</entry>
+        <entry>BUSTER</entry>
+        <entry>HAWKBLAZE</entry>
+        <entry>CAKE</entry>
+    </group>
+
+    <group id="mostly_white">
+        <entry>VAN</entry>
+        <entry>ONEEAR</entry>
+        <entry>LIGHTSONG</entry>
+        <entry>TAIL</entry>
+        <entry>HEART</entry>
+        <entry>MOORISH</entry>
+        <entry>APRON</entry>
+        <entry>CAPSADDLE</entry>
+        <entry>CHESTSPECK</entry>
+        <entry>BLACKSTAR</entry>
+        <entry>PETAL</entry>
+        <entry>HEARTTWO</entry>
+        <entry>PEBBLESHINE</entry>
+        <entry>BOOTS</entry>
+        <entry>COW</entry>
+        <entry>COWTWO</entry>
+        <entry>LOVEBUG</entry>
+        <entry>SHOOTINGSTAR</entry>
+        <entry>EYESPOT</entry>
+        <entry>PEBBLE</entry>
+        <entry>TAILTWO</entry>
+        <entry>BUDDY</entry>
+        <entry>KROPKA</entry>
+    </group>
+
+    <group id="point_markings">
+        <entry>COLOURPOINT</entry>
+        <entry>RAGDOLL</entry>
+        <entry>SEPIAPOINT</entry>
+        <entry>MINKPOINT</entry>
+        <entry>SEALPOINT</entry>
+    </group>
+
+    <group id="vitiligo">
+        <entry>VITILIGO</entry>
+        <entry>VITILIGOTWO</entry>
+        <entry>MOON</entry>
+        <entry>PHANTOM</entry>
+        <entry>KARPATI</entry>
+        <entry>POWDER</entry>
+        <entry>BLEACHED</entry>
+        <entry>SMOKEY</entry>
+    </group>
+
+    <group id="skin">
+        <entry>BLACK</entry>
+        <entry>PINK</entry>
+        <entry>DARKBROWN</entry>
+        <entry>BROWN</entry>
+        <entry>LIGHTBROWN</entry>
+        <entry>DARK</entry>
+        <entry>DARKGREY</entry>
+        <entry>GREY</entry>
+        <entry>DARKSALMON</entry>
+        <entry>SALMON</entry>
+        <entry>PEACH</entry>
+        <entry>DARKMARBLED</entry>
+        <entry>MARBLED</entry>
+        <entry>LIGHTMARBLED</entry>
+        <entry>DARKBLUE</entry>
+        <entry>BLUE</entry>
+        <entry>LIGHTBLUE</entry>
+        <entry>RED</entry>
+    </group>
+</pelt-config>
