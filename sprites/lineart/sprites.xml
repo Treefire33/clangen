@@ -1,0 +1,13 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<?xml-model href="../sprite_schema.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<spritesheets>
+    <spritesheet image="lineart" cell_size="50 50">
+        <sprite_group name="lines"/>
+    </spritesheet>
+    <spritesheet image="lineartdead" cell_size="50 50">
+        <sprite_group name="lineartdead"/>
+    </spritesheet>
+    <spritesheet image="lineartdf" cell_size="50 50">
+        <sprite_group name="lineartdf"/>
+    </spritesheet>
+</spritesheets>

@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<?xml-model href="pelt_schema.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<groups>
+    <group name="pelt_length">
+        short medium long
+    </group>
+
+    <group name="tabbies">
+        Tabby Ticked Mackerel Classic Sokoke
+        Agouti
+    </group>
+    <group name="spotted">
+        Speckled Rosette
+    </group>
+    <group name="plain">
+        SingleColour TwoColour Smoke Singlestripe
+    </group>
+    <group name="exotic">
+        Bengal Marbled Masked
+    </group>
+    <group name="torties">
+        Tortie Calico
+    </group>
+</groups>

@@ -1,0 +1,55 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<?xml-model href="../sprite_schema.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<spritesheets>
+    <spritesheet_prototype name="eyes_prototype">
+        <sprite_group name="YELLOW"/>
+        <sprite_group name="AMBER"/>
+        <sprite_group name="HAZEL"/>
+        <sprite_group name="PALEGREEN"/>
+        <sprite_group name="GREEN"/>
+        <sprite_group name="BLUE"/>
+        <sprite_group name="DARKBLUE"/>
+        <sprite_group name="GREY"/>
+        <sprite_group name="CYAN"/>
+        <sprite_group name="EMERALD"/>
+        <sprite_group name="HEATHERBLUE"/>
+        <sprite_group name="SUNLITICE"/>
+        
+        <sprite_group name="COPPER"/>
+        <sprite_group name="SAGE"/>
+        <sprite_group name="COBALT"/>
+        <sprite_group name="PALEBLUE"/>
+        <sprite_group name="BRONZE"/>
+        <sprite_group name="SILVER"/>
+        <sprite_group name="PALEYELLOW"/>
+        <sprite_group name="GOLD"/>
+        <sprite_group name="GREENYELLOW"/>
+        <sprite_group name="ORANGE"/>
+    </spritesheet_prototype>
+    <spritesheet image="eyes" prototype="eyes_prototype" name_convention="prefix"/>
+    <spritesheet image="eyes2" prototype="eyes_prototype" name_convention="prefix"/>
+    
+    <spritesheet image="fademask">
+        <sprite_group name="fademask0" />
+        <sprite_group name="fademask1" coordinate="1 0"/>
+        <sprite_group name="fademask2" coordinate="2 0"/>
+    </spritesheet>
+    <spritesheet image="fadestarclan">
+        <sprite_group name="fadestarclan0" />
+        <sprite_group name="fadestarclan1" coordinate="1 0"/>
+        <sprite_group name="fadestarclan2" coordinate="2 0"/>
+    </spritesheet>
+    <spritesheet image="fadedarkforest">
+        <sprite_group name="fadedf0" />
+        <sprite_group name="fadedf1" coordinate="1 0"/>
+        <sprite_group name="fadedf2" coordinate="2 0"/>
+    </spritesheet>
+
+    <spritesheet image="lightingnew">
+        <sprite_group name="lighting" />
+    </spritesheet>
+
+    <spritesheet image="shadersnewwhite">
+        <sprite_group name="shaders" />
+    </spritesheet>
+</spritesheets>

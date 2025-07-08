@@ -1,0 +1,166 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="spritesheets">
+        <xs:annotation>
+            <xs:documentation>
+                A group of spritesheets.
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:complexType>
+            <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                <xs:choice>
+                    <xs:element name="spritesheet" type="spritesheet" />
+                    <xs:element name="spritesheet_prototype" type="spritesheet_prototype">
+                        <xs:annotation>
+                            <xs:documentation>
+                                If multiple spritesheets repeat the same groups, then associate them with a
+                                prototype to prevent typing the same values over and over again.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--
+    <xs:element name="spritesheet" type="spritesheet">
+        <xs:annotation>
+            <xs:documentation>
+                A spritesheet.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element> 
+    -->
+
+    <xs:complexType name="spritesheet_prototype">
+        <xs:group ref="sprite_groups" minOccurs="1" maxOccurs="unbounded" />
+        <xs:attribute name="name" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string" />
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="spritesheet">
+        <xs:group ref="sprite_groups" minOccurs="0" maxOccurs="unbounded" />
+        <xs:attributeGroup ref="spritesheet_params"></xs:attributeGroup>
+    </xs:complexType>
+
+    <xs:group name="sprite_groups">
+        <xs:sequence>
+            <xs:element name="sprite_group" type="sprite_group"></xs:element>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:attributeGroup name="spritesheet_params">
+        <xs:attribute name="image" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    The path to the spritesheet's image.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:anyURI"></xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+
+        <xs:attribute name="cell_size" use="optional">
+            <xs:annotation>
+                <xs:documentation>
+                    The size (in pixels) of each cell. (ClanGen sets this to 50x50).
+                    Only the first two numbers are accepted.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:list itemType="xs:int" />
+            </xs:simpleType>
+        </xs:attribute>
+
+        <xs:attribute name="name_convention" use="optional">
+            <xs:annotation>
+                <xs:documentation>
+                    The naming convention of the group.
+                    Prefix takes the spritesheet name and appends the group's name to it.
+                    Colours takes the spritesheet name, removes "colours" from it, then appends the group's name to it.
+                    Suffix takes the spritesheet name and prepends the group's name to it.
+                    None takes the spritesheet name and that's it.
+                </xs:documentation>
+            </xs:annotation>
+
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="prefix" />
+                    <xs:enumeration value="colours" />
+                    <xs:enumeration value="suffix" />
+                    <xs:enumeration value="none" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+
+        <xs:attribute name="affix" use="optional">
+            <xs:annotation>
+                <xs:documentation>
+                    The prefix/suffix that is used instead of the default for 
+                    the prefix/suffix naming convention.
+                </xs:documentation>
+            </xs:annotation>
+
+            <xs:simpleType>
+                <xs:restriction base="xs:string" />
+            </xs:simpleType>
+        </xs:attribute>
+
+        <xs:attribute name="prototype" use="optional">
+            <xs:annotation>
+                <xs:documentation>
+                    The associated spritesheet prototype for this spritesheet.
+                </xs:documentation>
+            </xs:annotation>
+
+            <xs:simpleType>
+                <xs:restriction base="xs:string" />
+            </xs:simpleType>
+        </xs:attribute>
+
+        <xs:attribute name="prototype_affix" use="optional">
+            <xs:annotation>
+                <xs:documentation>
+                    Appended onto the name of each prototype group.
+                </xs:documentation>
+            </xs:annotation>
+
+            <xs:simpleType>
+                <xs:restriction base="xs:string" />
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:attributeGroup>
+
+    <xs:complexType name="sprite_group">
+        <xs:attribute name="name" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    Name of the group of sprites.
+                </xs:documentation>
+            </xs:annotation>
+
+            <xs:simpleType>
+                <xs:restriction base="xs:string"></xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="coordinate" use="optional">
+            <xs:annotation>
+                <xs:documentation>
+                    An coordiante that corresponds to the start of a group.
+                    This can be used to define the start of a new row.
+
+                    Only accepts the first two values. Also those values are multiplied by the cell_size.
+                </xs:documentation>
+            </xs:annotation>
+
+            <xs:simpleType>
+                <xs:list itemType="xs:int" />
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+</xs:schema>

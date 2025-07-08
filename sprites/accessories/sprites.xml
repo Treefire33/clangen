@@ -1,0 +1,145 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<?xml-model href="../sprite_schema.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<spritesheets>
+    <spritesheet_prototype name="collars_prototype">
+        <sprite_group name="CRIMSON" />
+        <sprite_group name="BLUE" />
+        <sprite_group name="YELLOW" />
+        <sprite_group name="CYAN" />
+        <sprite_group name="RED" />
+        <sprite_group name="LIME" />
+        <sprite_group name="GREEN" />
+        <sprite_group name="RAINBOW" />
+        <sprite_group name="BLACK" />
+        <sprite_group name="SPIKES" />
+        <sprite_group name="WHITE" />
+        <sprite_group name="PINK" />
+        <sprite_group name="PURPLE" />
+        <sprite_group name="MULTI" />
+        <sprite_group name="INDIGO" />
+    </spritesheet_prototype>
+
+    <spritesheet image="collars" prototype="collars_prototype" name_convention="prefix" affix="collars" />
+    <spritesheet image="bellcollars" prototype="collars_prototype" prototype_affix="BELL" name_convention="prefix" affix="collars" />
+    <spritesheet image="bowcollars" prototype="collars_prototype" prototype_affix="BOW" name_convention="prefix" affix="collars" />
+    <spritesheet image="nyloncollars" prototype="collars_prototype" prototype_affix="NYLON" name_convention="prefix" affix="collars" />
+
+    <spritesheet image="scars" name_convention="prefix" affix="scars">
+        <sprite_group name="ONE" />
+        <sprite_group name="TWO" />
+        <sprite_group name="THREE" />
+        <sprite_group name="MANLEG" />
+        <sprite_group name="BRIGHTHEART" />
+        <sprite_group name="MANTAIL" />
+        <sprite_group name="BRIDGE" />
+        <sprite_group name="RIGHTBLIND" />
+        <sprite_group name="LEFTBLIND" />
+        <sprite_group name="BOTHBLIND" />
+        <sprite_group name="BURNPAWS" />
+        <sprite_group name="BURNTAIL" />
+
+        <sprite_group name="BURNBELLY" />
+        <sprite_group name="BEAKCHEEK" />
+        <sprite_group name="BEAKLOWER" />
+        <sprite_group name="BURNRUMP" />
+        <sprite_group name="CATBITE" />
+        <sprite_group name="RATBITE" />
+        <sprite_group name="FROSTFACE" />
+        <sprite_group name="FROSTTAIL" />
+        <sprite_group name="FROSTMITT" />
+        <sprite_group name="FROSTSOCK" />
+        <sprite_group name="QUILLCHUNK" />
+        <sprite_group name="QUILLSCRATCH" />
+
+        <sprite_group name="TAILSCAR" />
+        <sprite_group name="SNOUT" />
+        <sprite_group name="CHEEK" />
+        <sprite_group name="SIDE" />
+        <sprite_group name="THROAT" />
+        <sprite_group name="TAILBASE" />
+        <sprite_group name="BELLY" />
+        <sprite_group name="TOETRAP" />
+        <sprite_group name="SNAKE" />
+        <sprite_group name="LEGBITE" />
+        <sprite_group name="NECKBITE" />
+        <sprite_group name="FACE" />
+        
+        <sprite_group name="HINDLEG" />
+        <sprite_group name="BACK" />
+        <sprite_group name="QUILLSIDE" />
+        <sprite_group name="SCRATCHSIDE" />
+        <sprite_group name="TOE" />
+        <sprite_group name="BEAKSIDE" />
+        <sprite_group name="CATBITETWO" />
+        <sprite_group name="SNAKETWO" />
+        <sprite_group name="FOUR" />
+    </spritesheet>
+
+    <spritesheet image="missingscars" name_convention="prefix" affix="scars">
+        <sprite_group name="LEFTEAR" />
+        <sprite_group name="RIGHTEAR" />
+        <sprite_group name="NOTAIL" />
+        <sprite_group name="NOLEFTEAR" />
+        <sprite_group name="NORIGHTEAR" />
+        <sprite_group name="NOEAR" />
+        <sprite_group name="HALFTAIL" />
+        <sprite_group name="NOPAW" />
+    </spritesheet>
+
+    <spritesheet image="medcatherbs" name_convention="prefix" affix="acc_herbs">
+        <sprite_group name="MAPLE LEAF" />
+        <sprite_group name="HOLLY" />
+        <sprite_group name="BLUE BERRIES" />
+        <sprite_group name="FORGET ME NOTS" />
+        <sprite_group name="RYE STALK" />
+        <sprite_group name="CATTAIL" />
+        <sprite_group name="POPPY" />
+        <sprite_group name="ORANGE POPPY" />
+        <sprite_group name="CYAN POPPY" />
+        <sprite_group name="WHITE POPPY" />
+        <sprite_group name="PINK POPPY" />
+
+        <sprite_group name="BLUEBELLS" />
+        <sprite_group name="LILY OF THE VALLEY" />
+        <sprite_group name="SNAPDRAGON" />
+        <sprite_group name="HERBS" />
+        <sprite_group name="PETALS" />
+        <sprite_group name="NETTLE" />
+        <sprite_group name="HEATHER" />
+        <sprite_group name="GORSE" />
+        <sprite_group name="JUNIPER" />
+        <sprite_group name="RASPBERRY" />
+        <sprite_group name="LAVENDER" />
+
+        <sprite_group name="OAK LEAVES" />
+        <sprite_group name="CATMINT" />
+        <sprite_group name="MAPLE SEED" />
+        <sprite_group name="LAUREL" />
+        <sprite_group name="BULB WHITE" />
+        <sprite_group name="BULB YELLOW" />
+        <sprite_group name="BULB ORANGE" />
+        <sprite_group name="BULB PINK" />
+        <sprite_group name="BULB BLUE" />
+        <sprite_group name="CLOVER" />
+        <sprite_group name="DAISY" />
+
+        <sprite_group name="DRY HERBS" />
+        <sprite_group name="DRY CATMINT" />
+        <sprite_group name="DRY NETTLES" />
+        <sprite_group name="DRY LAURELS" />
+    </spritesheet>
+
+    <spritesheet image="wild" name_convention="prefix" affix="acc_wild">
+        <sprite_group name="RED FEATHERS" />
+        <sprite_group name="BLUE FEATHERS" />
+        <sprite_group name="JAY FEATHERS" />
+        <sprite_group name="GULL FEATHERS" />
+        <sprite_group name="SPARROW FEATHERS" />
+        <sprite_group name="MOTH WINGS" />
+        <sprite_group name="ROSY MOTH WINGS" />
+        <sprite_group name="MORPHO BUTTERFLY" />
+        <sprite_group name="MONARCH BUTTERFLY" />
+        <sprite_group name="CICADA WINGS" />
+        <sprite_group name="BLACK CICADA" />
+    </spritesheet>
+</spritesheets>

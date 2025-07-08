@@ -1,0 +1,40 @@
+<?xml version="1.1" encoding="UTF_8"?>
+<?xml-model href="../sprite_schema.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<spritesheets>
+    <spritesheet_prototype name="colours_prototype">
+        <sprite_group name="WHITE" />
+        <sprite_group name="PALEGREY" />
+        <sprite_group name="SILVER" />
+        <sprite_group name="GREY" />
+        <sprite_group name="DARKGREY" />
+        <sprite_group name="GHOST" />
+        <sprite_group name="BLACK" />
+        <sprite_group name="CREAM" coordinate="0 1" />
+        <sprite_group name="PALEGINGER" />
+        <sprite_group name="GOLDEN" />
+        <sprite_group name="GINGER" />
+        <sprite_group name="DARKGINGER" />
+        <sprite_group name="SIENNA" />
+        <sprite_group name="LIGHTBROWN" coordinate="0 2" />
+        <sprite_group name="LILAC" />
+        <sprite_group name="BROWN" />
+        <sprite_group name="GOLDEN_BROWN" />
+        <sprite_group name="DARKBROWN" />
+        <sprite_group name="CHOCOLATE" />
+    </spritesheet_prototype>
+
+    <spritesheet image="singlecolours" prototype="colours_prototype" name_convention="colours" />
+    <spritesheet image="tabbycolours" prototype="colours_prototype" name_convention="colours" />
+    <spritesheet image="marbledcolours" prototype="colours_prototype" name_convention="colours" />
+    <spritesheet image="rosettecolours" prototype="colours_prototype" name_convention="colours" />
+    <spritesheet image="smokecolours" prototype="colours_prototype" name_convention="colours" />
+    <spritesheet image="tickedcolours" prototype="colours_prototype" name_convention="colours" />
+    <spritesheet image="speckledcolours" prototype="colours_prototype" name_convention="colours" />
+    <spritesheet image="bengalcolours" prototype="colours_prototype" name_convention="colours"/>
+    <spritesheet image="mackerelcolours" prototype="colours_prototype" name_convention="colours"/>
+    <spritesheet image="classiccolours" prototype="colours_prototype" name_convention="colours"/>
+    <spritesheet image="sokokecolours" prototype="colours_prototype" name_convention="colours"/>
+    <spritesheet image="agouticolours" prototype="colours_prototype" name_convention="colours"/>
+    <spritesheet image="singlestripecolours" prototype="colours_prototype" name_convention="colours"/>
+    <spritesheet image="maskedcolours" prototype="colours_prototype" name_convention="colours"/>
+</spritesheets>

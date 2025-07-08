@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<?xml-model href="../pelt_schema.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<groups>
+    <group name="yellow_eyes">
+        YELLOW AMBER PALEYELLOW GOLD COPPER
+        GREENYELLOW BRONZE SILVER ORANGE
+    </group>
+    <group name="blue_eyes">
+        BLUE DARKBLUE CYAN PALEBLUE HEATHERBLUE
+        COBALT SUNLITICE GREY
+    </group>
+    <group name="green_eyes">
+        PALEGREEN GREEN EMERALD SAGE HAZEL
+    </group>
+</groups>
