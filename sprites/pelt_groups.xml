@@ -21,4 +21,24 @@
     <group name="torties">
         Tortie Calico
     </group>
+
+    <association name="sprite_names">
+        <key name="SingleColour">single</key>
+        <key name="TwoColour">single</key>
+        <key name="Tabby">tabby</key>
+        <key name="Marbled">marbled</key>
+        <key name="Rosette">rosette</key>
+        <key name="Smoke">smoke</key>
+        <key name="Ticked">ticked</key>
+        <key name="Speckled">speckled</key>
+        <key name="Bengal">bengal</key>
+        <key name="Mackerel">mackerel</key>
+        <key name="Classic">classic</key>
+        <key name="Sokoke">sokoke</key>
+        <key name="Agouti">agouti</key>
+        <key name="Singlestripe">singlestripe</key>
+        <key name="Masked">masked</key>
+        <key name="Tortie" />
+        <key name="Calico" />
+    </association>
 </groups>

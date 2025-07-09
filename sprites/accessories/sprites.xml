@@ -123,7 +123,12 @@
         <sprite_group name="CLOVER" />
         <sprite_group name="DAISY" />
 
-        <sprite_group name="DRY HERBS" />
+        <sprite_group name="WISTERIA"/>
+        <sprite_group name="ROSE MALLOW" />
+        <sprite_group name="PICKLEWEED" />
+        <sprite_group name="GOLDEN CREEPING JENNY" />
+
+        <sprite_group name="DRY HERBS" coordinate="0 4"/>
         <sprite_group name="DRY CATMINT" />
         <sprite_group name="DRY NETTLES" />
         <sprite_group name="DRY LAURELS" />

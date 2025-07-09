@@ -1,6 +1,7 @@
 import random
 from random import choice
-from re import sub
+from re import sub, finditer
+import os
 
 import i18n
 
@@ -9,659 +10,111 @@ from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import get_lang_config
 from scripts.utility import adjust_list_text
-
+import xml.etree.ElementTree as xml_parser
 
 class Pelt:
-    sprites_names = {
-        "SingleColour": "single",
-        "TwoColour": "single",
-        "Tabby": "tabby",
-        "Marbled": "marbled",
-        "Rosette": "rosette",
-        "Smoke": "smoke",
-        "Ticked": "ticked",
-        "Speckled": "speckled",
-        "Bengal": "bengal",
-        "Mackerel": "mackerel",
-        "Classic": "classic",
-        "Sokoke": "sokoke",
-        "Agouti": "agouti",
-        "Singlestripe": "singlestripe",
-        "Masked": "masked",
-        "Tortie": None,
-        "Calico": None,
-    }
+    pelt_groups = {}
+    @staticmethod
+    def get_pelt(group_name):
+        target = Pelt.pelt_groups[group_name]
+        return target
+
+    for x in (
+        "",
+        "lineart/",
+        "colours/",
+        "accessories/",
+        "pelts/",
+        "misc/"
+    ):
+        cur_path = f"sprites/{x}"
+        if not os.path.exists(f"{cur_path}pelt_groups.xml"):
+            continue
+
+        current_xml = xml_parser.parse(f"{cur_path}pelt_groups.xml").getroot()
+
+        for group in current_xml.iter("group"):
+            name = group.get("name")
+            pelt_groups[name] = [sub(r'-', ' ', x[0]) for x in finditer(r"[\w-]+", group.text)]
+
+        for association in current_xml.iter("association"):
+            name = association.get("name")
+            pelt_groups[name] = {}
+            for key in association.iter("key"):
+                key_name = key.get("name")
+                value = None if not key.text else key.text
+                if association.get("list_ref", False) and value:
+                    value = pelt_groups[value]
+                pelt_groups[name][key_name] = value
+
+    sprites_names = pelt_groups["sprite_names"]
 
     # ATTRIBUTES, including non-pelt related
-    pelt_colours = [
-        "WHITE",
-        "PALEGREY",
-        "SILVER",
-        "GREY",
-        "DARKGREY",
-        "GHOST",
-        "BLACK",
-        "CREAM",
-        "PALEGINGER",
-        "GOLDEN",
-        "GINGER",
-        "DARKGINGER",
-        "SIENNA",
-        "LIGHTBROWN",
-        "LILAC",
-        "BROWN",
-        "GOLDEN-BROWN",
-        "DARKBROWN",
-        "CHOCOLATE",
-    ]
-    pelt_c_no_white = [
-        "PALEGREY",
-        "SILVER",
-        "GREY",
-        "DARKGREY",
-        "GHOST",
-        "BLACK",
-        "CREAM",
-        "PALEGINGER",
-        "GOLDEN",
-        "GINGER",
-        "DARKGINGER",
-        "SIENNA",
-        "LIGHTBROWN",
-        "LILAC",
-        "BROWN",
-        "GOLDEN-BROWN",
-        "DARKBROWN",
-        "CHOCOLATE",
-    ]
-    pelt_c_no_bw = [
-        "PALEGREY",
-        "SILVER",
-        "GREY",
-        "DARKGREY",
-        "CREAM",
-        "PALEGINGER",
-        "GOLDEN",
-        "GINGER",
-        "DARKGINGER",
-        "SIENNA",
-        "LIGHTBROWN",
-        "LILAC",
-        "BROWN",
-        "GOLDEN-BROWN",
-        "DARKBROWN",
-        "CHOCOLATE",
-    ]
+    tortiepatterns = pelt_groups["tortiepatterns"]
+    tortiebases = pelt_groups["tortiebases"]
 
-    tortiepatterns = [
-        "ONE",
-        "TWO",
-        "THREE",
-        "FOUR",
-        "REDTAIL",
-        "DELILAH",
-        "MINIMALONE",
-        "MINIMALTWO",
-        "MINIMALTHREE",
-        "MINIMALFOUR",
-        "HALF",
-        "OREO",
-        "SWOOP",
-        "MOTTLED",
-        "SIDEMASK",
-        "EYEDOT",
-        "BANDANA",
-        "PACMAN",
-        "STREAMSTRIKE",
-        "ORIOLE",
-        "CHIMERA",
-        "DAUB",
-        "EMBER",
-        "BLANKET",
-        "ROBIN",
-        "BRINDLE",
-        "PAIGE",
-        "ROSETAIL",
-        "SAFI",
-        "SMUDGED",
-        "DAPPLENIGHT",
-        "STREAK",
-        "MASK",
-        "CHEST",
-        "ARMTAIL",
-        "SMOKE",
-        "GRUMPYFACE",
-        "BRIE",
-        "BELOVED",
-        "BODY",
-        "SHILOH",
-        "FRECKLED",
-        "HEARTBEAT",
-    ]
-    tortiebases = [
-        "single",
-        "tabby",
-        "bengal",
-        "marbled",
-        "ticked",
-        "smoke",
-        "rosette",
-        "speckled",
-        "mackerel",
-        "classic",
-        "sokoke",
-        "agouti",
-        "singlestripe",
-        "masked",
-    ]
-
-    pelt_length = ["short", "medium", "long"]
-    eye_colours = [
-        "YELLOW",
-        "AMBER",
-        "HAZEL",
-        "PALEGREEN",
-        "GREEN",
-        "BLUE",
-        "DARKBLUE",
-        "GREY",
-        "CYAN",
-        "EMERALD",
-        "PALEBLUE",
-        "PALEYELLOW",
-        "GOLD",
-        "HEATHERBLUE",
-        "COPPER",
-        "SAGE",
-        "COBALT",
-        "SUNLITICE",
-        "GREENYELLOW",
-        "BRONZE",
-        "SILVER",
-        "ORANGE",
-    ]
-    yellow_eyes = [
-        "YELLOW",
-        "AMBER",
-        "PALEYELLOW",
-        "GOLD",
-        "COPPER",
-        "GREENYELLOW",
-        "BRONZE",
-        "SILVER",
-        "ORANGE",
-    ]
-    blue_eyes = [
-        "BLUE",
-        "DARKBLUE",
-        "CYAN",
-        "PALEBLUE",
-        "HEATHERBLUE",
-        "COBALT",
-        "SUNLITICE",
-        "GREY",
-    ]
-    green_eyes = ["PALEGREEN", "GREEN", "EMERALD", "SAGE", "HAZEL"]
+    pelt_length = pelt_groups["pelt_length"]
+    yellow_eyes = pelt_groups["yellow_eyes"]
+    blue_eyes = pelt_groups["blue_eyes"]
+    green_eyes = pelt_groups["green_eyes"]
+    eye_colours = list(yellow_eyes + blue_eyes + green_eyes)
 
     # bite scars by @wood pank on discord
 
     # scars from other cats, other animals
-    scars1 = [
-        "ONE",
-        "TWO",
-        "THREE",
-        "TAILSCAR",
-        "SNOUT",
-        "CHEEK",
-        "SIDE",
-        "THROAT",
-        "TAILBASE",
-        "BELLY",
-        "LEGBITE",
-        "NECKBITE",
-        "FACE",
-        "MANLEG",
-        "BRIGHTHEART",
-        "MANTAIL",
-        "BRIDGE",
-        "RIGHTBLIND",
-        "LEFTBLIND",
-        "BOTHBLIND",
-        "BEAKCHEEK",
-        "BEAKLOWER",
-        "CATBITE",
-        "RATBITE",
-        "QUILLCHUNK",
-        "QUILLSCRATCH",
-        "HINDLEG",
-        "BACK",
-        "QUILLSIDE",
-        "SCRATCHSIDE",
-        "BEAKSIDE",
-        "CATBITETWO",
-        "FOUR",
-    ]
+    scars1 = pelt_groups["scars1"]
 
     # missing parts
-    scars2 = [
-        "LEFTEAR",
-        "RIGHTEAR",
-        "NOTAIL",
-        "HALFTAIL",
-        "NOPAW",
-        "NOLEFTEAR",
-        "NORIGHTEAR",
-        "NOEAR",
-    ]
+    scars2 = pelt_groups["scars2"]
 
     # "special" scars that could only happen in a special event
-    scars3 = [
-        "SNAKE",
-        "TOETRAP",
-        "BURNPAWS",
-        "BURNTAIL",
-        "BURNBELLY",
-        "BURNRUMP",
-        "FROSTFACE",
-        "FROSTTAIL",
-        "FROSTMITT",
-        "FROSTSOCK",
-        "TOE",
-        "SNAKETWO",
-    ]
+    scars3 = pelt_groups["scars3"]
 
     # make sure to add plural and singular forms of new accs to acc_display.json so that they will display nicely
 
-    plant_accessories = [
-        "MAPLE LEAF",
-        "HOLLY",
-        "BLUE BERRIES",
-        "FORGET ME NOTS",
-        "RYE STALK",
-        "CATTAIL",
-        "POPPY",
-        "ORANGE POPPY",
-        "CYAN POPPY",
-        "WHITE POPPY",
-        "PINK POPPY",
-        "BLUEBELLS",
-        "LILY OF THE VALLEY",
-        "SNAPDRAGON",
-        "HERBS",
-        "PETALS",
-        "NETTLE",
-        "HEATHER",
-        "GORSE",
-        "JUNIPER",
-        "RASPBERRY",
-        "LAVENDER",
-        "OAK LEAVES",
-        "CATMINT",
-        "MAPLE SEED",
-        "LAUREL",
-        "BULB WHITE",
-        "BULB YELLOW",
-        "BULB ORANGE",
-        "BULB PINK",
-        "BULB BLUE",
-        "CLOVER",
-        "DAISY",
-        "DRY HERBS",
-        "DRY CATMINT",
-        "DRY NETTLES",
-        "DRY LAURELS",
-        "WISTERIA",
-        "ROSE MALLOW",
-        "PICKLEWEED",
-        "GOLDEN CREEPING JENNY",
-    ]
-    wild_accessories = [
-        "RED FEATHERS",
-        "BLUE FEATHERS",
-        "JAY FEATHERS",
-        "GULL FEATHERS",
-        "SPARROW FEATHERS",
-        "MOTH WINGS",
-        "ROSY MOTH WINGS",
-        "MORPHO BUTTERFLY",
-        "MONARCH BUTTERFLY",
-        "CICADA WINGS",
-        "BLACK CICADA",
-    ]
-    collars = [
-        "CRIMSON",
-        "BLUE",
-        "YELLOW",
-        "CYAN",
-        "RED",
-        "LIME",
-        "GREEN",
-        "RAINBOW",
-        "BLACK",
-        "SPIKES",
-        "WHITE",
-        "PINK",
-        "PURPLE",
-        "MULTI",
-        "INDIGO",
-        "CRIMSONBELL",
-        "BLUEBELL",
-        "YELLOWBELL",
-        "CYANBELL",
-        "REDBELL",
-        "LIMEBELL",
-        "GREENBELL",
-        "RAINBOWBELL",
-        "BLACKBELL",
-        "SPIKESBELL",
-        "WHITEBELL",
-        "PINKBELL",
-        "PURPLEBELL",
-        "MULTIBELL",
-        "INDIGOBELL",
-        "CRIMSONBOW",
-        "BLUEBOW",
-        "YELLOWBOW",
-        "CYANBOW",
-        "REDBOW",
-        "LIMEBOW",
-        "GREENBOW",
-        "RAINBOWBOW",
-        "BLACKBOW",
-        "SPIKESBOW",
-        "WHITEBOW",
-        "PINKBOW",
-        "PURPLEBOW",
-        "MULTIBOW",
-        "INDIGOBOW",
-        "CRIMSONNYLON",
-        "BLUENYLON",
-        "YELLOWNYLON",
-        "CYANNYLON",
-        "REDNYLON",
-        "LIMENYLON",
-        "GREENNYLON",
-        "RAINBOWNYLON",
-        "BLACKNYLON",
-        "SPIKESNYLON",
-        "WHITENYLON",
-        "PINKNYLON",
-        "PURPLENYLON",
-        "MULTINYLON",
-        "INDIGONYLON",
-    ]
+    plant_accessories = pelt_groups["plant_accessories"]
+    wild_accessories = pelt_groups["wild"]
+    collars = pelt_groups["collars"]
 
     # this is used for acc-giving events, only change if you're adding a new category tag to the event filter
     # adding a category here will automatically update the event editor's options
-    acc_categories = {
-        "PLANT": plant_accessories,
-        "WILD": wild_accessories,
-        "COLLAR": collars,
-    }
+    acc_categories = pelt_groups["acc_categories"]
 
-    tail_accessories = [
-        "RED FEATHERS",
-        "BLUE FEATHERS",
-        "JAY FEATHERS",
-        "GULL FEATHERS",
-        "SPARROW FEATHERS",
-        "CLOVER",
-        "DAISY",
-        "WISTERIA",
-        "GOLDEN CREEPING JENNY",
-    ]
+    tail_accessories = pelt_groups["tail_accessories"]
+    head_accessories = pelt_groups["head_accessories"]
+    body_accessories = pelt_groups["body_accessories"]
 
-    head_accessories = [
-        "MOTH WINGS",
-        "ROSY MOTH WINGS",
-        "MORPHO BUTTERFLY",
-        "MONARCH BUTTERFLY",
-        "CICADA WINGS",
-        "BLACK CICADA",
-        "MAPLE LEAF",
-        "HOLLY",
-        "BLUE BERRIES",
-        "FORGET ME NOTS",
-        "RYE STALK",
-        "CATTAIL",
-        "POPPY",
-        "ORANGE POPPY",
-        "CYAN POPPY",
-        "WHITE POPPY",
-        "PINK POPPY",
-        "BLUEBELLS",
-        "LILY OF THE VALLEY",
-        "SNAPDRAGON",
-        "NETTLE",
-        "HEATHER",
-        "GORSE",
-        "JUNIPER",
-        "RASPBERRY",
-        "LAVENDER",
-        "OAK LEAVES",
-        "CATMINT",
-        "MAPLE SEED",
-        "LAUREL",
-        "BULB WHITE",
-        "BULB YELLOW",
-        "BULB ORANGE",
-        "BULB PINK",
-        "BULB BLUE",
-        "DRY CATMINT",
-        "DRY NETTLES",
-        "DRY LAURELS",
-        "ROSE MALLOW",
-        "PICKLEWEED",
-    ]
-
-    body_accessories = [
-        "HERBS",
-        "PETALS",
-        "DRY HERBS",
-    ]
-
-    tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
-    spotted = ["Speckled", "Rosette"]
-    plain = ["SingleColour", "TwoColour", "Smoke", "Singlestripe"]
-    exotic = ["Bengal", "Marbled", "Masked"]
-    torties = ["Tortie", "Calico"]
+    tabbies = pelt_groups["tabbies"]
+    spotted = pelt_groups["spotted"]
+    plain = pelt_groups["plain"]
+    exotic = pelt_groups["exotic"]
+    torties = pelt_groups["torties"]
     pelt_categories = [tabbies, spotted, plain, exotic, torties]
 
     # SPRITE NAMES
-    single_colours = [
-        "WHITE",
-        "PALEGREY",
-        "SILVER",
-        "GREY",
-        "DARKGREY",
-        "GHOST",
-        "BLACK",
-        "CREAM",
-        "PALEGINGER",
-        "GOLDEN",
-        "GINGER",
-        "DARKGINGER",
-        "SIENNA",
-        "LIGHTBROWN",
-        "LILAC",
-        "BROWN",
-        "GOLDEN-BROWN",
-        "DARKBROWN",
-        "CHOCOLATE",
-    ]
-    ginger_colours = ["CREAM", "PALEGINGER", "GOLDEN", "GINGER", "DARKGINGER", "SIENNA"]
-    black_colours = ["GREY", "DARKGREY", "GHOST", "BLACK"]
-    white_colours = ["WHITE", "PALEGREY", "SILVER"]
-    brown_colours = [
-        "LIGHTBROWN",
-        "LILAC",
-        "BROWN",
-        "GOLDEN-BROWN",
-        "DARKBROWN",
-        "CHOCOLATE",
-    ]
+    single_colours = pelt_groups["single_colours"]
+    ginger_colours = pelt_groups["ginger_colours"]
+    black_colours = pelt_groups["black_colours"]
+    white_colours = pelt_groups["white_colours"]
+    brown_colours = pelt_groups["brown_colours"]
+    pelt_colours = list(
+        set(
+            single_colours+
+            ginger_colours+
+            black_colours+
+            white_colours+
+            brown_colours
+        )
+    )
     colour_categories = [ginger_colours, black_colours, white_colours, brown_colours]
-    eye_sprites = [
-        "YELLOW",
-        "AMBER",
-        "HAZEL",
-        "PALEGREEN",
-        "GREEN",
-        "BLUE",
-        "DARKBLUE",
-        "BLUEYELLOW",
-        "BLUEGREEN",
-        "GREY",
-        "CYAN",
-        "EMERALD",
-        "PALEBLUE",
-        "PALEYELLOW",
-        "GOLD",
-        "HEATHERBLUE",
-        "COPPER",
-        "SAGE",
-        "COBALT",
-        "SUNLITICE",
-        "GREENYELLOW",
-        "BRONZE",
-        "SILVER",
-        "ORANGE",
-    ]
-    little_white = [
-        "LITTLE",
-        "LIGHTTUXEDO",
-        "BUZZARDFANG",
-        "TIP",
-        "BLAZE",
-        "BIB",
-        "VEE",
-        "PAWS",
-        "BELLY",
-        "TAILTIP",
-        "TOES",
-        "BROKENBLAZE",
-        "LILTWO",
-        "SCOURGE",
-        "TOESTAIL",
-        "RAVENPAW",
-        "HONEY",
-        "LUNA",
-        "EXTRA",
-        "MUSTACHE",
-        "REVERSEHEART",
-        "SPARKLE",
-        "RIGHTEAR",
-        "LEFTEAR",
-        "ESTRELLA",
-        "REVERSEEYE",
-        "BACKSPOT",
-        "EYEBAGS",
-        "LOCKET",
-        "BLAZEMASK",
-        "TEARS",
-    ]
-    mid_white = [
-        "TUXEDO",
-        "FANCY",
-        "UNDERS",
-        "DAMIEN",
-        "SKUNK",
-        "MITAINE",
-        "SQUEAKS",
-        "STAR",
-        "WINGS",
-        "DIVA",
-        "SAVANNAH",
-        "FADESPOTS",
-        "BEARD",
-        "DAPPLEPAW",
-        "TOPCOVER",
-        "WOODPECKER",
-        "MISS",
-        "BOWTIE",
-        "VEST",
-        "FADEBELLY",
-        "DIGIT",
-        "FCTWO",
-        "FCONE",
-        "MIA",
-        "ROSINA",
-        "PRINCESS",
-        "DOUGIE",
-    ]
-    high_white = [
-        "ANY",
-        "ANYTWO",
-        "BROKEN",
-        "FRECKLES",
-        "RINGTAIL",
-        "HALFFACE",
-        "PANTSTWO",
-        "GOATEE",
-        "PRINCE",
-        "FAROFA",
-        "MISTER",
-        "PANTS",
-        "REVERSEPANTS",
-        "HALFWHITE",
-        "APPALOOSA",
-        "PIEBALD",
-        "CURVED",
-        "GLASS",
-        "MASKMANTLE",
-        "MAO",
-        "PAINTED",
-        "SHIBAINU",
-        "OWL",
-        "BUB",
-        "SPARROW",
-        "TRIXIE",
-        "SAMMY",
-        "FRONT",
-        "BLOSSOMSTEP",
-        "BULLSEYE",
-        "FINN",
-        "SCAR",
-        "BUSTER",
-        "HAWKBLAZE",
-        "CAKE",
-    ]
-    mostly_white = [
-        "VAN",
-        "ONEEAR",
-        "LIGHTSONG",
-        "TAIL",
-        "HEART",
-        "MOORISH",
-        "APRON",
-        "CAPSADDLE",
-        "CHESTSPECK",
-        "BLACKSTAR",
-        "PETAL",
-        "HEARTTWO",
-        "PEBBLESHINE",
-        "BOOTS",
-        "COW",
-        "COWTWO",
-        "LOVEBUG",
-        "SHOOTINGSTAR",
-        "EYESPOT",
-        "PEBBLE",
-        "TAILTWO",
-        "BUDDY",
-        "KROPKA",
-    ]
-    point_markings = ["COLOURPOINT", "RAGDOLL", "SEPIAPOINT", "MINKPOINT", "SEALPOINT"]
-    vit = [
-        "VITILIGO",
-        "VITILIGOTWO",
-        "MOON",
-        "PHANTOM",
-        "KARPATI",
-        "POWDER",
-        "BLEACHED",
-        "SMOKEY",
-    ]
+
+    eye_sprites = list(set(yellow_eyes+blue_eyes+green_eyes))
+    little_white = pelt_groups["little_white"]
+    mid_white = pelt_groups["mid_white"]
+    high_white = pelt_groups["high_white"]
+    mostly_white = pelt_groups["mostly_white"]
+    point_markings = pelt_groups["point_markings"]
+    vit = pelt_groups["vitiligo"]
     white_sprites = [
         little_white,
         mid_white,
@@ -672,26 +125,7 @@ class Pelt:
         "FULLWHITE",
     ]
 
-    skin_sprites = [
-        "BLACK",
-        "PINK",
-        "DARKBROWN",
-        "BROWN",
-        "LIGHTBROWN",
-        "DARK",
-        "DARKGREY",
-        "GREY",
-        "DARKSALMON",
-        "SALMON",
-        "PEACH",
-        "DARKMARBLED",
-        "MARBLED",
-        "LIGHTMARBLED",
-        "DARKBLUE",
-        "BLUE",
-        "LIGHTBLUE",
-        "RED",
-    ]
+    skin_sprites = pelt_groups["skin"]
 
     """Holds all appearance information for a cat. """
 

@@ -127,6 +127,8 @@ class Sprites:
 
         del width, height  # unneeded
 
+        self.spritesheet("sprites/symbols.png", "symbols")
+
         self.load_sprites()
         self.load_symbols()
 
@@ -142,7 +144,7 @@ class Sprites:
             if not os.path.exists(f"{cur_path}/sprites.xml"):
                 print(f"Required sprite path ({x}) was missing sprites.xml.")
                 continue
-            
+
             spritesheets = xml_parser.parse(f"{cur_path}/sprites.xml").getroot()
 
             for spritesheet in spritesheets.iter("spritesheet"):
@@ -151,7 +153,7 @@ class Sprites:
                 self.spritesheet(f"{cur_path}/{spritesheet.get("image")}.png", image)
 
                 self.parse_groups(spritesheets, spritesheet)
-   
+
     def parse_groups(self, root: Element, spritesheet: Element):
         image = spritesheet.get("image")
         name_type = spritesheet.get("name_convention", None)
@@ -174,8 +176,6 @@ class Sprites:
                 y = int(coord[1])
 
             group_name = self.adjust_group_name(name, name_type, affix or image)
-            print(group_name)
-            print((x, y))
 
             self.make_group(image, (x, y), group_name)
             x += 1

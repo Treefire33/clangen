@@ -21,7 +21,7 @@
         TOE SNAKETWO
     </group>
 
-    <group name="plant_accessories" count_hyphen_as_space="true">
+    <group name="plant_accessories">
         MAPLE HOLLY BLUE-BERRIES FORGET-ME-NOTS RYE-STALK
         CATTAIL POPPY ORANGE-POPPY CYAN-POPPY WHITE-POPPY 
         PINK-POPPY BLUEBELLS LILY-OF-THE-VALLEY SNAPDRAGONHERBS
@@ -29,11 +29,11 @@
         RASPBERRY LAVENDER OAK-LEAVES CATMINT MAPLE-SEED
         LAUREL BULB-WHITE BULB-YELLOW  BULB-ORANGE BULB-PINK
         BULB-BLUE CLOVER DAISY DRY-HERBS DRY-CATMINT
-        DRY-NETTLES DRY-LAURELS WISTERIA ROSE PICKLEWEED
-        GOLDEN-CREPPING-JENNY
+        DRY-NETTLES DRY-LAURELS WISTERIA ROSE-MALLOW PICKLEWEED
+        GOLDEN-CREEPING-JENNY
     </group>
 
-    <group name="wild" count_hyphen_as_space="true">
+    <group name="wild">
         RED-FEATHERS BLUE-FEATHERS JAY-FEATHERS GULL-FEATHERS
         SPARROW-FEATHERS MOTH-WINGS ROSY-MOTH-WINGS MORPHO-BUTTERFLY
         MONARCH-BUTTERFLY CICADA-WINGS BLACK-CICADA
@@ -53,12 +53,12 @@
         BLACKNYLON SPIKESNYLON WHITENYLON PINKNYLON PURPLENYLON MULTINYLON INDIGONYLON
     </group>
 
-    <group name="tail_accessories" count_hyphen_as_space="true">
+    <group name="tail_accessories">
         RED-FEATHERS BLUE-FEATHERS JAY-FEATHERS GULL-FEATHERS SPARROW-FEATHERS
         CLOVER DAISY WISTERIA GOLDEN-CREEPING-JENNY
     </group>
 
-    <group name="head_accessories" count_hyphen_as_space="true">
+    <group name="head_accessories">
         MOTH-WINGS ROSY-MOTH-WINGS MORPHO-BUTTERFLY MONARCH-BUTTERFLY CICADA-WINGS
         BLACK-CICADA MAPLE-LEAF HOLLY BLUE-BERRIES FORGET-ME-NOTS
         RYE-STALK CATTAIL POPPY ORANGE-POPPY CYAN-POPPY
@@ -72,4 +72,10 @@
     <group name="body_accessories">
         HERBS PETALS DRY-HERBS
     </group>
+
+    <association name="acc_categories" list_ref="true">
+        <key name="PLANT">plant_accessories</key>
+        <key name="WILD">wild</key>
+        <key name="COLLARS">collars</key>
+    </association>
 </groups>

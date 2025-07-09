@@ -2,12 +2,23 @@
     <xs:element name="groups">
         <xs:complexType>
             <xs:sequence minOccurs="1" maxOccurs="unbounded">
-                <xs:element name="group" type="group_def" />
+                <xs:choice>
+                    <xs:element name="group" type="group_def" />
+                    <xs:element name="association" type="association_def" />
+                </xs:choice>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
     <xs:simpleType name="group_list">
+        <xs:annotation>
+            <xs:documentation>
+                Any entries that contain hyphens are treated as one word. When
+                parsed the hyphens are replaced with spaces.
+
+                For example, LILY-OF-THE-VALLEY becomes LILY OF THE VALLEY
+            </xs:documentation>
+        </xs:annotation>
         <xs:list itemType="xs:string" />
     </xs:simpleType>
 
@@ -19,18 +30,40 @@
                         <xs:restriction base="xs:string" />
                     </xs:simpleType>
                 </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
 
-                <xs:attribute name="count_hyphen_as_space" use="optional">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Since we assume space is our delimiter for entries, 
-                            whenever an entry is parsed any hyphens are replaced with spaces.
+    <xs:complexType name="association_def">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="key" type="association_key" />
+        </xs:sequence>
+        <xs:attribute name="name" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string" />
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="list_ref" use="optional">
+            <xs:annotation>
+                <xs:documentation>
+                    When true, each key-value pair references a group rather than
+                    a string. For example, acc_categories' PLANT key references the list
+                    plant_accessories, whereas sprite_names' SingleColour key refers to the
+                    string "single".
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:boolean" />
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
 
-                            This is specifically to account for the edge case for accessories.
-                        </xs:documentation>
-                    </xs:annotation>
+    <xs:complexType name="association_key">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="name">
                     <xs:simpleType>
-                        <xs:restriction base="xs:boolean" />
+                        <xs:restriction base="xs:string" />
                     </xs:simpleType>
                 </xs:attribute>
             </xs:extension>
