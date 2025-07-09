@@ -47,8 +47,8 @@
             <xs:annotation>
                 <xs:documentation>
                     When true, each key-value pair references a group rather than
-                    a string. For example, acc_categories' PLANT key references the list
-                    plant_accessories, whereas sprite_names' SingleColour key refers to the
+                    a string. For example, acc_categories' PLANT key references the group
+                    "plant_accessories", whereas sprite_names' SingleColour key refers to the
                     string "single".
                 </xs:documentation>
             </xs:annotation>

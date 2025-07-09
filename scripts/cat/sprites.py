@@ -133,6 +133,9 @@ class Sprites:
         self.load_symbols()
 
     def load_sprites(self):
+        """
+        Loads all spritesheets defined in the xml files in the sprites directory.
+        """
         for x in (
             "lineart",
             "colours",
@@ -155,27 +158,33 @@ class Sprites:
                 self.parse_groups(spritesheets, spritesheet)
 
     def parse_groups(self, root: Element, spritesheet: Element):
+        """
+        Parses all sprite groups of a spritesheet.
+        """
         image = spritesheet.get("image")
         name_type = spritesheet.get("name_convention", None)
         affix = spritesheet.get("affix", None)
-        prototype_name = spritesheet.get("prototype", "")
         prototype_affix = spritesheet.get("prototype_affix", "")
 
-        prototype = root.find(f'.//spritesheet_prototype[@name="{prototype_name}"]')
+        prototype = root.find(
+            f'.//spritesheet_prototype[@name="{spritesheet.get("prototype", "")}"]'
+        )
 
         cols = math.floor(self.spritesheets[image].width / (self.size * 3))
 
         x = 0
         y = 0
         for group in (prototype or spritesheet).iter("sprite_group"):
-            name = group.get("name") + (prototype_affix if prototype else "")
+            group_name = self.adjust_group_name(
+                group.get("name") + (prototype_affix if prototype else ""),
+                name_type,
+                affix or image
+            )
             coord = group.get("coordinate", None)
             if coord:
                 coord = coord.split(' ')
                 x = int(coord[0])
                 y = int(coord[1])
-
-            group_name = self.adjust_group_name(name, name_type, affix or image)
 
             self.make_group(image, (x, y), group_name)
             x += 1
@@ -189,6 +198,9 @@ class Sprites:
         convention: str,
         affix: str = None
     ) -> str:
+        """
+        Adjusts a group's name based on a specified convention.
+        """
         match convention:
             case "prefix":
                 return affix+name

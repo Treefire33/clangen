@@ -84,7 +84,6 @@
                     Prefix takes the spritesheet name and appends the group's name to it.
                     Colours takes the spritesheet name, removes "colours" from it, then appends the group's name to it.
                     Suffix takes the spritesheet name and prepends the group's name to it.
-                    None takes the spritesheet name and that's it.
                 </xs:documentation>
             </xs:annotation>
 
@@ -93,7 +92,6 @@
                     <xs:enumeration value="prefix" />
                     <xs:enumeration value="colours" />
                     <xs:enumeration value="suffix" />
-                    <xs:enumeration value="none" />
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>

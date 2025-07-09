@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <?xml-model href="../pelt_schema.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <groups>
-    <group name="single_colours">
+    <group name="pelt_colours">
         WHITE PALEGREY SILVER GREY DARKGREY
         GHOST BLACK CREAM PALEGINGER GOLDEN
         GINGER DARKGINGER SIENNA LIGHTBROWN LILAC

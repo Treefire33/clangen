@@ -92,20 +92,11 @@ class Pelt:
     pelt_categories = [tabbies, spotted, plain, exotic, torties]
 
     # SPRITE NAMES
-    single_colours = pelt_groups["single_colours"]
     ginger_colours = pelt_groups["ginger_colours"]
     black_colours = pelt_groups["black_colours"]
     white_colours = pelt_groups["white_colours"]
     brown_colours = pelt_groups["brown_colours"]
-    pelt_colours = list(
-        set(
-            single_colours+
-            ginger_colours+
-            black_colours+
-            white_colours+
-            brown_colours
-        )
-    )
+    pelt_colours = pelt_groups["pelt_colours"]
     colour_categories = [ginger_colours, black_colours, white_colours, brown_colours]
 
     eye_sprites = list(set(yellow_eyes+blue_eyes+green_eyes))
