@@ -5,12 +5,13 @@ import ujson
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
-from pygame_gui.elements import UIImage
+from pygame_gui.elements import UIImage, UITextBox
 
 import scripts.game_structure.screen_settings
 from scripts.clan import Clan
 from scripts.game_structure import game
 from scripts.housekeeping.datadir import get_save_dir
+from scripts.ui.generate_box import BoxStyles, get_box
 from ..ui.elements.image_button import UIImageButton
 from ..ui.elements.surface_image_button import UISurfaceImageButton
 from scripts.ui.windows.delete_check import CheckDeletionWindow
@@ -149,61 +150,73 @@ class SwitchClanScreen(Screens):
         self.clan_display_names = [[]]
         self.delete_buttons = [[]]
 
-        # cursed math o clock!
-        # i am exceedingly sorry for this abomination
-        core_frame_dimensions = 375 - 49
-        core = ceil(ui_scale_value(core_frame_dimensions) / 8) * 8
-        item_height = core / 8
-        clan_frame_height = core + ui_scale_value(49)
-
+        frame_padding = 60
         self.clans_frame = UIImage(
-            pygame.Rect(
-                ui_scale_offset((0, 151)), (ui_scale_value(220), clan_frame_height)
-            ),
-            self.screen,
-            anchors={"centerx": "centerx"},
+            ui_scale(pygame.Rect((frame_padding, 29), (220, 348))),
+            get_box(BoxStyles.FRAME, (220, 348)),
+            anchors={"centery": "centery"},
             starting_height=0,
+            manager=MANAGER,
         )
-        self.clans_frame.disable()
 
+        self.clans_frame_header = UIImage(
+            ui_scale(
+                pygame.Rect(
+                    (frame_padding + 50, -(self.clans_frame.rect.height / 2 - 16)),
+                    (120, 33),
+                )
+            ),
+            get_button_dict(ButtonStyles.HEADER, (120, 33))["normal"],
+            anchors={"centery": "centery"},
+            manager=MANAGER,
+        )
+
+        self.clans_frame_header_text = UITextBox(
+            "screens.switch_clan.clans_frame_header",
+            self.clans_frame_header.rect,
+            object_id=get_text_box_theme("@clangen_16"),
+            manager=MANAGER,
+        )
+
+        # Each clan entry is about 39 pixels
+        item_height = ui_scale_value(39)
         i = 0
         for clan in self.clan_list[1:]:
             self.clan_name[-1].append(clan)
+
             try:
                 with open(f"{get_save_dir()}/{clan}clan.json") as f:
                     clan_button_name = ujson.load(f).get("displayname", clan)
             except (FileNotFoundError, ujson.JSONDecodeError):
-                clan_button_name = clan
+                clan_button_name = f"!! {clan} !!"
+
             self.clan_display_names[-1].append(clan_button_name)
             self.clan_buttons[-1].append(
                 UISurfaceImageButton(
-                    pygame.Rect(
-                        (
-                            (0, 0)
-                            if len(self.clan_buttons[-1]) % 8 != 0
-                            else ui_scale_offset((0, 190))
-                        ),
-                        (ui_scale_value(200), item_height),
+                    ui_scale(
+                        pygame.Rect(
+                            (
+                                (frame_padding, 0)
+                                if len(self.clan_buttons[-1]) % 8 != 0
+                                else (frame_padding, 190)
+                            ),
+                            (200, item_height),
+                        )
                     ),
                     "general.clan",
                     get_button_dict(
                         ButtonStyles.DROPDOWN,
-                        (
-                            200,
-                            item_height
-                            / scripts.game_structure.screen_settings.screen_scale,
-                        ),
+                        (200, item_height),
                     ),
                     text_kwargs={"name": clan_button_name},
                     object_id=ObjectID("#text_box_34_horizcenter_vertcenter", "#dark"),
                     manager=MANAGER,
                     anchors=(
                         {
-                            "centerx": "centerx",
                             "top_target": self.clan_buttons[-1][-1],
                         }
                         if len(self.clan_buttons[-1]) % 8 != 0
-                        else {"centerx": "centerx"}
+                        else {}
                     ),
                 )
             )

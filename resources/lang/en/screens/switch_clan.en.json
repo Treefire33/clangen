@@ -3,6 +3,7 @@
         "current_clan": {
             "zero": "There is no Clan currently loaded.",
             "one": "The currently loaded Clan is %{clan}\n(id: %{clan_id})."
-        }
+        },
+        "clans_frame_header": "Your Clans"
     }
 }
